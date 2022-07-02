@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-900 font-body px-5;
+  }
+}
+@layer components {
+  .page-container {
+    max-width: 1280px;
+    @apply mx-auto;
+  }
+  .movie-list .swiper-slide {
+    width: 300px;
+    height: auto;
+  }
+  .banner .swiper {
+    height: 100%;
+  }
+}
+.text-truncate {
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 28px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+  border-radius: 20px;
+  .pagination-number {
+    @apply w-full max-w-[50px] h-10 leading-10 text-center rounded-xl transition-all;
+  }
+  .pagination-previous {
+    @apply text-primary font-bold text-2xl;
+  }
+  .pagination-next {
+    @apply text-primary font-bold text-2xl;
+  }
+  .selected {
+    @apply w-full max-w-[50px] h-10 leading-10 text-center rounded-xl transition-all bg-primary;
+  }
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.movie-cart:hover .default-button,
+.banner:hover .default-button {
+  background-color: #6f5cf1;
+  transition: ease-in 1s;
+}
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 4%, 29%);
+  }
+  100% {
+    background-color: hsl(204, 5%, 40%);
+  }
+}
+
+.scale-hover:hover {
+  transform: scale3d(1.1, 1.1, 1) translate3d(6%, 0, 0) perspective(31.25em);
+  box-shadow: 0 0 0.75em rgb(0 0 0 / 90%);
+}
